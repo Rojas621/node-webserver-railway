@@ -128,7 +128,14 @@ const port = process.env.PORT;
         nombre: 'Armando David',
         titulo: 'Curso de Node'
       });
-    })
+    });
+    app.get('/salidas', (req, res) => {
+            res.render('salidas', {
+              nombre: 'Armando David Espinoza',
+              titulo: 'Curso de Node'
+            })
+        
+          });
     app.get('/elements', (req, res) => {
         res.render('elements', {
           nombre: 'Armando David',
@@ -144,9 +151,10 @@ const port = process.env.PORT;
           });
       app.get('*', (req, res)=> {
         res.sendFile(__dirname +'/public/404.html');
-      })
+      });
+    
     app.listen(port, () => {
         console.log(`Example app listenining al http://localhost:${port}`)
-    })  
+    }) ;
 
     
